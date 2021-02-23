@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(241, 190, 58);
+}
+
+.container {
+    display: block;
+    height: 600px;
+    width: 600px;
+    margin: 100px auto;
+    transform: translateX(20%);
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin: 10px 30px;
+    font-size: 30px;
+}
+
+input {
+    margin: 0 35px;
+    padding: 2px;
+    width: 220px;
+    outline: palegoldenrod;
+    outline-style: double;
+}
+
+.list{
+    margin: 50px 0;
+    transform: translateX(-20%);
+    width: 400px;
+}
+
+button {
+    width: 100px;
+    margin: 20px auto;
+    transform: translateX(-138%);
+    outline: palegoldenrod;
+    outline-style: double;
+}
+
+.btnn {
+    transform: translate(215%,-100%);
+}
+
+.ugpa{
+    font-size: 24px;
+    transform: translateX(300px);
+}

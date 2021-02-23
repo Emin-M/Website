@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        cursor: none;
+    }
+
+    nav {
+        width: 90%;
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+        padding: 15px;
+    }
+
+    nav h1 {
+        flex: 1;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        justify-items: flex-end;
+        list-style: none;
+        z-index: 2;
+    }
+
+    li {
+        padding: 1rem 6rem;
+    }
+
+    .cursor {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid black;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        transition: all 0.3s ease;
+        transition-property: background, transform;
+        transform-origin: 100%, 100%;
+        backdrop-filter: grayscale();
+    }
+
+    .cover {
+        margin: 1rem;
+    }
+
+    section {
+        z-index: -43;
+    }
+
+    .cover p {
+        font-size: 22px;
+        color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        padding: 7px;
+    }
+
+    img {
+        border: 1px solid gray;
+        border-radius: 10px;
+        z-index: -384;
+    }
+
+    .link-grow {
+        transform: scale(2);
+        background: black;
+        color: white;
+    }
+
+    .hovered-link {
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="cursor">
+    </div>
+    <nav>
+        <h1>DEV-ED</h1>
+        <ul class="nav-links">
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+        </ul>
+    </nav>
+    <section>
+        <div class="cover">
+            <img src="/IMG/compgirl.webp" alt="">
+            <p>THE BEAUITIFULEST</p>
+        </div>
+    </section>
+    <script>
+        var links = document.querySelectorAll('.nav-links');
+        var mouseCursor = document.querySelector('.cursor');
+        window.addEventListener('mousemove', cursor);
+
+        function cursor(e) {
+            mouseCursor.style.top = e.pageY + 'px';
+            mouseCursor.style.left = e.pageX + 'px';
+        }
+        links.forEach(link => {
+            link.addEventListener('mouseleave', () => {
+                mouseCursor.classList.remove('link-grow');
+                link.classList.remove('hovered-link');
+            })
+            link.addEventListener('mouseover', () => {
+                mouseCursor.classList.add('link-grow');
+                link.classList.add('hovered-link');
+            })
+        })
+    </script>
+</body>
+
+</html>

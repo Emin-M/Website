@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Web</title>
+    <style>
+        nav {
+            display: flex;
+            height: 8vh;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        h3,
+        p {
+            margin: 0 220px;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+        }
+
+        img {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+        }
+
+        .imgg {
+            margin-top: 20px;
+            margin: 8px auto;
+            border: 2px solid rgb(106, 175, 106);
+            border-radius: 10px;
+        }
+
+        h4 {
+            position: absolute;
+            bottom: 140px;
+            left: 240px;
+            font-size: 60px;
+            color: rgb(235, 203, 203);
+        }
+
+        .hero {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgb(100, 100, 100);
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h3>DEV-ED</h3>
+            <p>logo</p>
+        </nav>
+        <section>
+            <div class="imgg">
+                <img src="/IMG/araba3.jpg" alt="">
+                <h4>DREAM BIG</h4>
+            </div>
+        </section>
+    </header>
+    <div class="hero"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script>
+        var img = document.querySelector('img');
+        var hero = document.querySelector('.hero');
+        var h4 = document.querySelector('h4');
+        var imgg = document.querySelector('.imgg');
+        var tl = new TimelineMax();
+        tl.fromTo(img, 1, {
+            height: "0vh"
+        }, {
+            height: "60vh",
+            ease: Power2.easeInOut
+        }).fromTo(hero, 1, {
+            width: "0%"
+        }, {
+            width: "100%"
+        }).fromTo(imgg, 1, {
+            width: "100%"
+        }, {
+            width: "80%"
+        })
+    </script>
+</body>
+
+</html>

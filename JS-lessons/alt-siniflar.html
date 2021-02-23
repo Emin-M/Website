@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise</title>
+</head>
+
+<body>
+    <script>
+        function Person(firstname, lastname) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+        }
+        Person.prototype.sayHi = function () {
+            return `Hello I'm ${this.firstname} ${this.lastname}`;
+        }
+
+        function Customer(firstname, lastname, phone, username) {
+            Person.call(this, firstname, lastname);
+            this.phone = phone;
+            this.username = username;
+        }
+        Customer.prototype = Object.create(Person.prototype);
+
+        var emin = new Customer('Emin', 'Mustafazade', '4895436', 'emustafazade');
+        console.log(emin.sayHi());
+
+        class PersonES6 {
+            constructor(firstname, lastname) {
+                this.firstname = firstname;
+                this.lastname = lastname;
+            }
+
+            sayHi() {
+                return `Hello I'm ${this.firstname} ${this.lastname}`;
+            }
+        }
+        class CustomerES6 extends PersonES6 {
+            constructor(firstname, lastname, phone, username) {
+                super(firstname, lastname);
+                this.phone = phone;
+                this.username = username;
+            }
+        }
+
+        let tacir = new CustomerES6('Tacir', 'Mustafazade', '4654876', 'tmustafazade');
+        console.log(tacir.sayHi());
+    </script>
+</body>
+
+</html>

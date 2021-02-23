@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise</title>
+</head>
+
+<body>
+    <form action="">
+        Ad: <input type="text" value="" id="name"><br><br>
+        Yas: <input type="text" value="" id="age"><br><br>
+        <input type="submit" id="submit"><br><br>
+        <div id="errors"></div>
+    </form>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function (e) {
+            var name = document.getElementById('name');
+            var age = document.getElementById('age');
+            var errors = document.getElementById('errors');
+            errors.innerHTML = '';
+            try {
+                if (name.value.length === 0) {
+                    throw new Error('name is required!');
+                }
+                if (name.value.length > 20) {
+                    throw new Error('name is too longer!');
+                }
+                if (age.value.length === 0) {
+                    throw new Error('age is required!');
+                }
+                if (age.value.length >= 3) {
+                    throw new Error('you are too old:)');
+                }
+                if (isNaN(age.value)) {
+                    throw new Error('age is not a number');
+                }
+                console.log('form is submitted');
+            } catch (err) {
+                errors.innerHTML = err.message;
+            } finally {
+                name.value = '';
+                age.value = '';
+            }
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

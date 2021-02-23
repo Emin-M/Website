@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #fff;
+}
+
+header {
+    display: flex;
+    height: 100%;
+    width: 35%;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+
+.container {
+    width: 100%;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+h1 {
+    padding-top: 13px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+}
+
+p {
+    opacity: 0.25;
+    font-size: 16px;
+    padding-right: 60px;
+    font-weight: 450;
+}
+
+hr {
+    width: 85px;
+    margin: 25px 0;
+    opacity: 0.5;
+}
+
+.links li {
+    display: block;
+    list-style: none;
+    padding: 5px;
+}
+
+.links li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #000000;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.links li a:hover {
+    opacity: 1;
+}
+
+.icons li {
+    display: inline-block;
+    list-style: none;
+    padding: 5px;
+}
+
+.icons li a {
+    text-decoration: none;
+    font-size: 10px;
+    color: #000;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+.icons li a:hover {
+    opacity: 1;
+}
+
+.exc {
+    font-size: 11px;
+    padding: 12px;
+    opacity: 0.4;
+}
+
+.exc a {
+    text-decoration: none;
+    color: #000;
+    word-spacing: 1.7px;
+}
+
+.exc a:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 950px) {
+    body {
+        flex-direction: column;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .links li {
+        padding: 20px 7px;
+        display: inline-block;
+    }
+
+    .exc {
+        display: none;
+    }
+
+    .container h1 {
+        padding-bottom: 20px;
+    }
+
+    .icons {
+        padding-bottom: 20px;
+    }
+
+    .icons li a {
+        font-size: 10px;
+    }
+}

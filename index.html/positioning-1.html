@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Positioning</title>
+    <style>
+        .box {
+            width: 120px;
+            height: 120px;
+        }
+
+        #first {
+            background: red;
+            width: 100%;
+            
+            position: sticky;
+            top: 100px;
+        }
+
+        #second {
+            background: green;
+        }
+        .mbox{
+            width: 30px;
+            height: 30px;
+            background: yellow;
+            position: relative; /*absolute olanda sehifeye gore ayarlanir*/
+            top: 30px;
+            left: 43px;
+        }
+
+        #third {
+            background: blue;
+            position: fixed;  /*absolute olseydi asagida deyanasiydi(ama indi scrollnan birlikde oynuyur)*/
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus fugiat dolor qui accusamus? Minima officia, optio atque, nisi porro nemo vitae eaque possimus quis ullam culpa sapiente, architecto nulla ducimus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dolorum ut blanditiis quia totam sed omnis! Dolore perspiciatis neque repellendus ipsa fugiat saepe quas quisquam cupiditate ab, at, porro reiciendis.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, natus id earum. Repellat asperiores consectetur quia numquam nihil iusto at quam, non qui suscipit fugiat eius repudiandae necessitatibus esse tenetur.</p>
+<body>
+    <div class="box" id="first">box 1</div>
+    <div class="box" id="second">box 2
+        <div class="mbox"></div>
+    </div>
+    <div class="box" id="third">box 3</div>
+    
+    <div style="height: 2000px"></div>
+</body>
+
+
+
+
+</html>

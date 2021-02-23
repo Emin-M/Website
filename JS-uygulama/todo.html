@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: absolute;
+            padding: 8px;
+        }
+
+        #addtodo {
+            padding: 2px 5px;
+            margin: 0 2px;
+        }
+
+        #inputField {
+            outline: none;
+            padding: 2px 0;
+        }
+
+        .add1 {
+            margin: 5px 4px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: red;
+        }
+
+        .color {
+            background-color: rgb(10, 117, 153);
+            color: rgb(241, 234, 234);
+            margin: 5px;
+            padding: 2px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input id="inputField" type="text" value=""><button id="addtodo">+</button>
+        <div id="tdc">
+        </div>
+    </div>
+    <script>
+        let input = document.getElementById('inputField');
+        let addToDo = document.getElementById('addtodo');
+        let tdc = document.getElementById('tdc');
+        var n = 1;
+        addToDo.addEventListener('click', function () {
+            var paraqraf = document.createElement('p');
+            paraqraf.textContent = n + '.' + input.value;
+            paraqraf.className = 'add1 color';
+            tdc.appendChild(paraqraf);
+            input.value = '';
+            paraqraf.addEventListener('click', function () {
+                paraqraf.style.textDecoration = 'line-through';
+            });
+            paraqraf.addEventListener('dblclick', function () {
+                tdc.removeChild(paraqraf);
+            })
+            n++;
+        })
+    </script>
+</body>
+
+</html>

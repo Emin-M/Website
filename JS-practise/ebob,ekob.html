@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBOB vs EKOB</title>
+</head>
+
+<body>
+    <script>
+        /*function ebobTapma(a, b) {
+            let ebob = a;
+            while (a % ebob != 0 || b % ebob != 0) {
+                ebob--;
+            }
+            return ebob;
+        }
+        console.log(ebobTapma(230, 80));
+
+        function ekobTapma(c, d) {
+            let ekob;
+            if (c >= d) {
+                ekob = c;
+            } else {
+                ekob = d;
+            }
+            while (ekob % c != 0 || ekob % d != 0) {
+                ekob++;
+            }
+            return ekob;
+        }
+        console.log(ekobTapma(145, 67));*/
+
+        function ebob(num1) {
+            let ebob = Math.max(num1);
+            var i = 0;
+            if (num1[i] % ebob != 0) {
+                ebob--;
+                i++;
+            }
+            return ebob;
+        }
+
+        var num1 = [10, 23, 12, 44];
+        ebob.apply(null, num1);
+    </script>
+</body>
+
+</html>

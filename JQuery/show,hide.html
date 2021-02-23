@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show,Hide</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".toggle").click(function () {
+                $(".paragraf").toggle(1000);
+                var x = $(".toggle");
+                if(x.val() === "Hide"){
+                    x.val("Show");
+                }else{
+                    x.val("Hide");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <input type="button" value="Hide" class="toggle">
+</body>
+
+</html>

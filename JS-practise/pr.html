@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-header">Quiz</div>
+                    <div class="card-body">
+                        <h5 id="question" class="card-title">Question Text</h5>
+                        <hr>
+                        <div id="buttons">
+                            <button id="btn0" class="btn btn-primary">
+                                <span id="choice0">Choice 0</span>
+                            </button>
+                            <button id="btn1" class="btn btn-primary">
+                                <span id="choice1">Choice 1</span>
+                            </button>
+                            <button id="btn2" class="btn btn-primary">
+                                <span id="choice2">Choice 2</span>
+                            </button>
+                            <button id="btn3" class="btn btn-primary">
+                                <span id="choice3">Choice 3</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="progress" class="card-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        function Question(text, choices, answer) {
+            this.text = text;
+            this.choices = choices;
+            this.answer = answer;
+        }
+
+        // Question prototype
+        Question.prototype.checkAnswer = function (answer) {
+            return this.answer === answer;
+        }
+
+        // Quiz constractor
+        function Quiz(questions) {
+            this.questions = questions;
+            var score = 0;
+            var questionIndex = 0
+        }
+
+        // Quiz prototype
+        Quiz.prototype.getQuestion = function () {
+            return this.questions[this.questionIndex];
+        }
+
+        // isFinish
+        Quiz.prototype.isFinish = function () {
+            return this.questions.length === this.questionIndex;
+        }
+
+        // Guess
+        Quiz.prototype.guess = function (answer) {
+            var question = this.getQuestion();
+
+            if (question.checkAnswer(answer)) {
+                this.score++;
+            }
+            this.questionIndex++;
+        }
+
+        var q1 = new Question('what is the best programming languege?', ['c#', 'java', 'asp.net', 'javascript'],
+            'javascript');
+
+        var q2 = new Question('what  is the most modern programming languege?', ['c#', 'java', 'asp.net', 'javascript'],
+            'javascript');
+
+        var q3 = new Question('what is the most usefull programming languege?', ['c#', 'java', 'asp.net', 'javascript'],
+            'javascript');
+
+        var questions = [q1, q2, q3];
+        var quiz = new Quiz(questions);
+
+        loadQuestion();
+
+        function loadQuestion() {
+            if (quiz.isFinish) {
+                // showScore();
+            } else {
+                var question = quiz.getQuestion();
+                var choices = question.choices;
+                document.querySelector('#question').textContent = question.text;
+            }
+            for (var i = 0; i < choices.length; i++) {
+                var element = document.querySelector('#choice' + i);
+                element.innerHTML = choices[i];
+            }
+
+
+
+            guess('btn' + i, choices[i]);
+        }
+
+        function guess(id, guess) {
+            var btn = document.getElementById(id);
+            btn.onclick = function () {
+                quiz.guess(guess);
+                loadQuestion();
+            }
+        }
+
+        function showScore() {
+            var html = `<h2>Score</h2><h4>${quiz.score}</h4>`;
+            document.querySelector('.card-body').innerHTML = html;
+        }
+
+        function showProgress() {
+            var totalquestion = quiz.questions.length;
+            var questionNumber = quiz.questionIndex + 1;
+            document.querySelector('#progress').innerHTML = 'Question' + questionNumber + 'of' + totalquestion;
+        }
+    </script>
+</body>
+
+</html>

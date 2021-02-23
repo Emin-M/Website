@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body></body>
+<input type="text" id="search">
+<div class="text">
+    <h2>salam eleykim</h2>
+    <p>edil xiyardi</p>
+    <em>elsad gotdu</em>
+</div>
+<script>
+    $(function () {
+        $('#search').on('keyup', function () {
+            var value = $(this).val();
+            $('.text *').filter(function () {
+                $(this).toggle($(this).text().indexOf(value) > -1);
+            })
+        })
+    })
+</script>
+</body>
+
+</html

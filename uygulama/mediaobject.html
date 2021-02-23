@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Object</title>
+</head>
+<style>
+    .media {
+        background-color: antiquewhite;
+        display: flex;
+        max-width: 500px;
+        padding: 16px;
+        margin: 20px;
+        border-radius: 5px;
+    }
+
+    img {
+        margin-right: 16px;
+        width: 100px;
+        height: 90px;
+        border-radius: 5px;
+    }
+
+    .media-body {
+        align-items: flex-start;
+    }
+
+    h3 {
+        margin: 0 0 8px;
+    }
+
+    .img2 {
+        order: 1;
+        margin-left: 16px;
+    }
+
+    .inner {
+        margin-left: 0;
+    }
+</style>
+
+<body>
+    <div class="media">
+        <img src="/IMG/5e4d8c21a27fc53d4650f643.jfif" alt="">
+        <div class="media-body">
+            <h3>Lorem ipsum.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nam recusandae eos voluptatibus
+                deleniti rerum est illum beatae eaque numquam.</p>
+        </div>
+    </div>
+    <div class="media">
+        <img class="img2" src="/IMG/5e4d8c21a27fc53d4650f643.jfif" alt="">
+        <div class="media-body">
+            <h3>Lorem ipsum.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nam recusandae eos voluptatibus
+                deleniti rerum est illum beatae eaque numquam.</p>
+        </div>
+    </div>
+    <div class="media">
+        <img src="/IMG/5e4d8c21a27fc53d4650f643.jfif" alt="">
+        <div class="media-body">
+            <h3>Lorem ipsum.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nam recusandae eos voluptatibus
+                deleniti rerum est illum beatae eaque numquam.</p>
+            <div class="media">
+                <img class="inner" src="/IMG/5e4d8c21a27fc53d4650f643.jfif" alt="">
+                <div class="media-body">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate reiciendis suscipit!</p>
+                </div>
+            </div>
+            <div class="media">
+                <img class="inner" src="/IMG/5e4d8c21a27fc53d4650f643.jfif" alt="">
+                <div class="media-body">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ab ratione asperiores</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

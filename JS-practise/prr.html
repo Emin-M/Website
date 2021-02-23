@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* var b = [1, 2, 3, 4, 5, 4, 3, 6, 1, 2, 3, 6];
+        var count = 0;
+        var fak = 0;
+        b.forEach(el => {
+            var sub = b.filter(s => el - s === 0 || el - s === 1);
+            if (sub.length > count) {
+                count = sub.length;
+                fak = sub;
+            }
+        });
+        console.log(count);
+        console.log(fak);*/
+        /*function climbingLeaderboard(scores, alice) {
+            console.log(scores, alice);
+
+            let positions = [];
+            let distScore = [...new Set(scores)];
+            let aliceIndex = 0;
+            let i = distScore.length - 1;
+            alice.forEach(element => {
+
+                while (i >= 0) {
+                    if (element >= distScore[i]) {
+                        i--;
+                    } else {
+                        positions.push(i + 2);
+                        break;
+                    }
+                }
+                if (i < 0) positions.push(1);
+
+            });
+
+            return positions;
+
+        }*/
+
+        var yarraxs = [4,7,4,3,2,4,4,9,78,65,23,5];
+        var newYarraxs = [...new Set(yarraxs)];
+        console.log(newYarraxs);
+    </script>
+</body>
+
+</html>

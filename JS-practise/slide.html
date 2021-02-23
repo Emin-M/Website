@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 370px;
+        }
+
+        .container {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        p {
+            text-align: center;
+            background: goldenrod;
+            color: #fff;
+            font-size: 25px;
+            padding: 10px;
+        }
+
+        .x {
+            position: absolute;
+            top: 135px;
+            font-size: 30px;
+            left: 0;
+        }
+
+        .y {
+            position: absolute;
+            top: 135px;
+            font-size: 30px;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="/IMG/araba1.jpg" alt="">
+        <p class="card-title">BMW 116d</p>
+        <span class="x" style="font-size: 50px;">&times;</span>
+        <span class="y" style="font-size: 50px;">&times;</span>
+    </div>
+
+    <script>
+        var models = [{
+                name: 'BMW 116d',
+                image: '/IMG/araba1.jpg'
+            },
+            {
+                name: 'Honda s456',
+                image: '/IMG/araba2.jpg'
+            },
+            {
+                name: 'Mercedes q3',
+                image: '/IMG/araba3.jpg'
+            },
+            {
+                name: 'Opel astra',
+                image: '/IMG/araba4.jpg'
+            },
+            {
+                name: 'Hyundai sanata',
+                image: '/IMG/araba5.jpg'
+            }
+        ];
+        var index = 0;
+        var img = document.querySelector('img');
+        var namee = document.querySelector('.card-title');
+        var x = document.querySelector('.x')
+        var y = document.querySelector('.y')
+
+        x.addEventListener('click', function () {
+            index++;
+            showSlide(index);
+        });
+
+        y.addEventListener('click', function () {
+            index--;
+            showSlide(index);
+        });
+
+        function showSlide(i) {
+            index = i;
+            if (i >= models.length) {
+                index = 0;
+            }
+            if (i < 0) {
+                index = models.length - 1;
+            }
+            img.setAttribute('src', models[index].image);
+            namee.textContent = models[index].name;
+        }
+    </script>
+</body>
+
+</html>

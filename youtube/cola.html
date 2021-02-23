@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cola</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /*navbar*/
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background: #2196f3;
+        }
+
+        .icon img {
+            width: 50px;
+            height: auto;
+            margin: 5px 50px;
+        }
+
+        .links {
+            margin-right: 110px;
+        }
+
+        .links ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .links ul li a {
+            text-decoration: none;
+            margin: 20px;
+            font-size: 24px;
+        }
+
+        /*section*/
+        section {
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            background: #1e1e1e;
+        }
+
+        section img {
+            width: 400px;
+            height: auto;
+        }
+
+        section .text {
+            width: 400px;
+            height: auto;
+            margin: 0 140px;
+        }
+
+        .text h2 {
+            font-size: 56px;
+            margin-bottom: 0;
+            color: #000;
+            opacity: 0.7;
+            color: #ffffff;
+        }
+
+        .text span {
+            display: block;
+        }
+
+        .text p {
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        button {
+            font-size: 19px;
+            border-radius: 11px;
+            padding: 5px;
+            outline: none;
+            background: #2196f3;
+            color: #ffffff;
+        }
+
+        /*==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>==>*/
+
+        .ximage {
+            display: flex;
+            position: absolute;
+            top: 75%;
+            right: 500px;
+        }
+
+        .ximage img {
+            width: 70px;
+            height: auto;
+            z-index: 62;
+        }
+
+        .ximage img:hover {
+            transform: translateY(-15px);
+            transition-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="icon"><img src="/IMG/pepsiicon.gif"></div>
+        <div class="links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Exit</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="sec">
+        <div class="text">
+            <h2>This one <span>I like</span></h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur molestias provident, a optio culpa
+                sunt ut quidem, debitis animi quis hic corporis magni quae iusto consequuntur, vel sequi fugiat earum?
+            </p>
+            <button>show more information</button>
+        </div>
+        <div class="image">
+            <img class="img" src="/IMG/pepsi4.gif">
+        </div>
+    </section>
+    <div class="ximage">
+        <img src='/IMG/pepsi2.gif' onclick="slideChange('/IMG/pepsi2.gif');changeColor('#1e1e1e')">
+        <img src='/IMG/pepsi3.gif' onclick="slideChange('/IMG/pepsi3.gif');changeColor('#e60c2c')">
+        <img src='/IMG/pepsi4.gif' onclick="slideChange('/IMG/pepsi4.gif');changeColor('#0062be')">
+    </div>
+
+    <script>
+        function slideChange(anything) {
+            document.querySelector('.img').src = anything;
+        }
+
+        function changeColor(color) {
+            const sec = document.querySelector('.sec');
+            const img = document.querySelector('.ximage');
+            sec.style.background = color;
+            img.style.background = color;
+        }
+    </script>
+</body>
+
+</html>

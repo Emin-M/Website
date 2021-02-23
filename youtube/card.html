@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            background: #000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 40vh;
+            padding: 60px;
+            margin: 100px;
+        }
+
+        img {
+            width: 250px;
+            height: 200px;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: 0.6s;
+        }
+
+        .card:hover img {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .card {
+            width: 500px;
+        }
+
+        .body {
+            height: 50px;
+            color: white;
+            width: 80%;
+            transform: translateY(-150px);
+            transition: 0.3s;
+            padding: 0 10px;
+        }
+
+        .card:hover .body {
+            height: 200px;
+            transform: translateY(1px);
+        }
+
+        .body h4 {
+            text-align: center;
+            font-size: 26px;
+            padding: 7px 4px;
+            padding-left: 0;
+            transform: translateY(100%);
+        }
+
+        .card:hover .body h4 {
+            transform: translateY(-10%);
+        }
+
+        .content {
+            background: grey;
+            margin: 0 20px;
+            border: 1px solid goldenrod;
+            border-radius: 10px;
+            box-shadow: 7px 7px 7px 0px greenyellow;
+        }
+
+        .body p {
+            letter-spacing: 1.9px;
+            display: none;
+        }
+
+        .card:hover .body p {
+            display: block;
+        }
+
+        .btn {
+            margin-top: 4px;
+            padding: 7px 12px;
+            background-color: greenyellow;
+            border: 1px solid green;
+            border-radius: 7px;
+            outline: none;
+            color: red;
+            display: none;
+            transition: 0.5s;
+        }
+
+        .btn:hover{
+            background-color: rgba(20, 62, 151, 0.411);
+            color: white;
+        }
+
+        .card:hover .btn {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card card1">
+            <div class="content">
+                <img src="/IMG/enterteintment.svg" alt="yoxdu daa">
+                <div class="body">
+                    <h4>Enterteintment</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, impedit accusamus. Maxime
+                        nostrum beatae nisi!
+                    </p>
+                    <button class="btn" type="button">Read More</button>
+                </div>
+            </div>
+        </div>
+        <div class="card card2">
+            <div class="content">
+                <img src="/IMG/code.svg" alt="yoxdu daa">
+                <div class="body">
+                    <h4>Code</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, impedit accusamus. Maxime
+                        nostrum beatae nisi!
+                    </p>
+                    <button class="btn" type="button">Read More</button>
+                </div>
+            </div>
+        </div>
+        <div class="card card3">
+            <div class="content">
+                <img src="/IMG/travel.svg" alt="yoxdu daa">
+                <div class="body">
+                    <h4>Travel</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, impedit accusamus. Maxime
+                        nostrum beatae nisi!
+                    </p>
+                    <button class="btn" type="button">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

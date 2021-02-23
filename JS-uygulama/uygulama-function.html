@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Emin0705655699 = {
+            ad: "Emin Mustafazade",
+            hesapNo: "12345678",
+            pul: 2000,
+            ekpul: 1000,
+        };
+        var Tacir0708379142 = {
+            ad: "Tacir Mustafazade",
+            hesapNo: "12345679",
+            pul: 3000,
+            ekpul: 1000,
+        };
+
+        function paracek(hesap, miqdar) {
+            console.log(`Salam ${hesap.ad}`);
+            if (hesap.pul >= miqdar) {
+                hesap.pul = hesap.pul - miqdar;
+                console.log('paranizi ceke bilirsiniz');
+            } else {
+                var toplam = hesap.pul + hesap.ekpul;
+                if (toplam >= miqdar) {
+                    var ekhesap = miqdar - hesap.pul;
+                    hesap.pul = 0;
+                    hesap.ekpul = hesap.ekpul - ekhesap;
+                    if (confirm('ek hesapi kullanmak istermisiniz?')) {
+                        console.log('paranizi goture bilirsiniz');
+                    } else {
+                        console.log('esas hesapda miqdar yoxdu');
+                    }
+                } else {
+                    console.log(`Hesabinizda ${toplam} kadar para var`);
+                }
+            }
+        }
+        paracek(Emin0705655699, prompt("ne kadar para cekmek isdeyirsiniz?"));
+    </script>
+</body>
+
+</html>

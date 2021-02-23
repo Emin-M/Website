@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip-Path</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: lightblue;
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            top: 150px;
+        }
+
+        img {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+        }
+
+        .img1 {
+            clip-path: circle(20% at 0% 5%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .img1:hover {
+            clip-path: circle(100% at 50% 50%);
+            z-index: 2;
+        }
+
+        .img2 {
+            clip-path: circle(20% at 0% 90%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .img2:hover {
+            clip-path: circle(100% at 50% 50%);
+            z-index: 2;
+        }
+
+        .img3 {
+            clip-path: circle(20% at 100% 0%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .img3:hover {
+            clip-path: circle(100% at 50% 50%);
+            z-index: 2;
+        }
+
+        .img4 {
+            clip-path: circle(20% at 100% 96%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .img4:hover {
+            clip-path: circle(100% at 50% 50%);
+            z-index: 2;
+        }
+        h1{
+            position: absolute;
+            transform: translate(90%,270%);
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CLIP-PATH</h1>
+        <img src="/IMG/araba5.jpg" class="img1" alt="">
+        <img src="/IMG/araba2.jpg" class="img2" alt="">
+        <img src="/IMG/araba3.jpg" class="img3" alt="">
+        <img src="/IMG/araba4.jpg" class="img4" alt="">
+    </div>
+</body>
+
+</html>

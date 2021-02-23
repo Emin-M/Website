@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HttpGet talepleri</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="input-group">
+                        <input id="id" class="form-control" type="text">
+                        <div class="input-group-append">
+                            <button id="getOne" type="button" class="btn btn-primary">Get One</button>
+                            <button id="getAll" type="button" class="btn btn-success">Get All</button>
+                            <button id="postData" type="button" class="btn btn-warning">Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        document.querySelector('#getOne').addEventListener('click', getOne)
+
+        document.querySelector('#getAll').addEventListener('click', getAll)
+
+        document.querySelector('#postData').addEventListener('click', postData)
+
+        function getOne() {
+            var id = document.getElementById('id').value;
+            var url = "https://jsonplaceholder.typicode.com/posts/" + id;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+
+            xhr.onload = function () {
+                if (this.status === 200) {
+                    var posts = JSON.parse(this.responseText);
+                    var html = `
+                    <div class="card mb-3">
+                        <div class="card-header">
+                           <p>${posts.title}</p>
+                        </div>
+                        <div class="card-body">
+                          <p>${posts.body}</p>
+                        </div>
+                        <div class="card-footer">
+                            <span style="font-size:25px">Id :</span>
+                            <span style="font-size:22px">${posts.id}</span>
+                        </div>
+                    </div>`;
+
+                    document.getElementById('results').innerHTML = html;
+                    document.getElementById('id').value = '';
+                };
+            }
+
+            xhr.send();
+        };
+
+        function getAll() {
+            var url = "https://jsonplaceholder.typicode.com/posts";
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+
+            xhr.onload = function () {
+                if (this.status === 200) {
+                    var posts = JSON.parse(this.responseText);
+                    var html = '';
+                    posts.forEach(post => {
+                        html += `
+                    <div class="card my-3">
+                        <div class="card-header">
+                           <p>${post.title}</p>
+                        </div>
+                        <div class="card-body">
+                          <p>${post.body}</p>
+                        </div>
+                    </div>`;
+
+                        document.getElementById('results').innerHTML = html;
+                    });
+                }
+            }
+
+            xhr.send();
+        }
+
+        function postData() {
+            const data = {
+                userId: 1,
+                title: "new title",
+                body: "new body"
+            }
+            var json = JSON.stringify(data);
+            var url = "https://jsonplaceholder.typicode.com/posts";
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-type', 'application/json;charset=utf-8');
+            xhr.onload = function () {
+                if (xhr.status === 201 && xhr.readyState === 4) {
+                    var post = xhr.responseText;
+                    console.log(post);
+                }
+            }
+            xhr.send(json)
+        }
+    </script>
+</body>
+
+</html>

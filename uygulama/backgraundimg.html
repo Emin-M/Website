@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgraund Image</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            background: red;
+            background-image:  linear-gradient(to left bottom,rgba(102,255,102,.7),rgba(230,255,230,.7)), url(https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg);
+            height: 95vh;
+            background-size: cover;
+            background-position: top;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 87%);
+            position: relative;
+        }
+        .heading{
+            text-transform: uppercase;
+            color: white;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%,-50%);
+        }
+        .heading-main{
+            display: block;
+            font-size: 50px;
+            letter-spacing: 10px;
+        }
+        .heading-sub{
+            display: block;
+            font-size: 30px;
+            letter-spacing: 5px;
+        }
+        .logo img{
+          width: 50px;
+          height: 50px; 
+          position: absolute; 
+          left: 50px;
+          top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="https://png.pngtree.com/element_pic/16/11/02/bd886d7ccc6f8dd8db17e841233c9656.jpg" alt="">
+        </div>
+       <h1 class="heading">
+           <span class="heading-main">Main Title</span>
+           <span class="heading-sub">Sub Title</span>
+       </h1>
+    </header>
+</body>
+</html>

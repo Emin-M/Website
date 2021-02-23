@@ -1,0 +1,20 @@
+[
+{
+    "firstName" : "Emin",
+    "lastName" : "Mustafazade",
+    "age" : 20,
+    "retired" : false
+},
+{
+    "firstName" : "Tacir",
+    "lastName" : "Mustafazade",
+    "age" : 18,
+    "retired" : false
+},
+{
+    "firstName" : "Omer",
+    "lastName" : "Mustafayev",
+    "age" : 50,
+    "retired" : true
+}
+]
