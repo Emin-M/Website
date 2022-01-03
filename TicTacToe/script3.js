@@ -51,7 +51,7 @@ $(function () {
             function addX() {
                 turns++;
                 var r = Math.floor(Math.random() * $('.cl').length);
-                var y = $('.cl').eq(r).text('x').addClass('disable x').removeClass('cl');
+                $('.cl').eq(r).text('x').addClass('disable x').removeClass('cl');
                 if (spot1.hasClass('x') && spot2.hasClass('x') && spot3.hasClass('x') ||
                     spot4.hasClass('x') && spot5.hasClass('x') && spot6.hasClass('x') ||
                     spot7.hasClass('x') && spot8.hasClass('x') && spot9.hasClass('x') ||

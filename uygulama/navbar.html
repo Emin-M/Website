@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: goldenrod;
+            height: 65px;
+        }
+
+        h4 {
+            padding: 20px 50px;
+            position: absolute;
+            font-size: 20px;
+            color: white;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            float: right;
+        }
+
+        ul li {
+            display: inline-block;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 50px;
+        }
+
+        ul li:hover {
+            background-color: rgb(173, 171, 171);
+        }
+
+        ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+        }
+
+        ul li:hover>ul {
+            display: flex;
+        }
+
+        li ul {
+            position: absolute;
+            display: none;
+            flex-direction: column;
+            background-color: greenyellow;
+            top: 65px;
+        }
+
+        .sub {
+            position: absolute;
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h4>Logo</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">JavaScript</a>
+                    <ul>
+                        <li><a href="#">Jquery</a></li>
+                        <li><a href="#">TypeScript</a></li>
+                        <li><a href="#">NodeJs</a>
+                            <ul class="sub">
+                                <li><a href="#">Sub-1</a></li>
+                                <li><a href="#">Sub-2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Html</a></li>
+                <li><a href="#">Css</a>
+                    <ul>
+                        <li><a href="#">SCss</a></li>
+                        <li><a href="#">Less</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+
+</html>

@@ -44,11 +44,22 @@
 
             return positions;
 
-        }*/
+        }
 
         var yarraxs = [4,7,4,3,2,4,4,9,78,65,23,5];
         var newYarraxs = [...new Set(yarraxs)];
-        console.log(newYarraxs);
+        console.log(newYarraxs);*/
+        var n = [2, 7, 56, 4, 3, 7, 9];
+
+        function calc() {
+            var total = 0;
+            for (var i = 0; i < n.length; i++) {
+                total += n[i];
+            }
+            return total;
+        }
+        console.log(calc.apply(n));
+        document.write(calc.call(n));
     </script>
 </body>
 
